@@ -1,0 +1,18 @@
+name: Build nbfc
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build_job:
+    name: build nbfc for releasing
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Build app for release
+        run: ./build.sh
