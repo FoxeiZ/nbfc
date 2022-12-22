@@ -21,3 +21,8 @@ jobs:
                 cd /nbfc
                 chmod +x build.sh
                 ./build.sh
+                
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          path: ${{ github.workspace }}/Linux/bin/Release/
