@@ -16,7 +16,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: mono:latest
-            options: -v ${{ github.workspace }}:/var/www
             run: |
+                cd /github/workspace
                 chmod +x build.sh
                 ./build.sh
