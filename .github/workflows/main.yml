@@ -16,7 +16,8 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: mono:latest
+            options: -v ${{ github.workspace }}:/nbfc
             run: |
-                cd /github/workspace
+                cd /nbfc
                 chmod +x build.sh
                 ./build.sh
